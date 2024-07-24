@@ -1,9 +1,7 @@
+import React, { useEffect, useState } from "react";
+import NavBar from "./components/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
-import "./App.css";
-import HeroSection from "./components/Hero Section/HeroSection";
-import Navbar from "./components/Navbar/Navbar";
 import { fetchNewAlbums, fetchSongs, fetchTopAlbums } from "./api/api";
-import { useEffect, useState } from "react";
 
 function App() {
   const [searchData, useSearchData] = useState();
@@ -20,21 +18,18 @@ function App() {
   useEffect(() => {
     generateData("topAlbums", fetchTopAlbums);
     generateData("newAlbums", fetchNewAlbums);
-    generateData("Songs", fetchSongs);
+    generateData("songs", fetchSongs);
   }, []);
 
   const { topAlbums = [], newAlbums = [], songs = [] } = data;
-  // console.log(data);
+
+  console.log(songs)
 
   return (
     <>
       <div>
-        <Navbar />
-        <Outlet
-          context={{
-            data: { topAlbums, newAlbums, songs },
-          }}
-        />
+        <NavBar />
+        <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
       </div>
     </>
   );

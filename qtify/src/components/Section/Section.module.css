@@ -19,6 +19,10 @@
   color: var(--color-primary);
 }
 
-h3 {
+/* h3 {
   color: var(--color-white);
+} */
+
+.filterWrapper {
+  margin-top: 15px;
 }

@@ -13,7 +13,7 @@ function Card({ data, type }) {
             <Link to={`/album/${slug}`}>
               <div className={styles.wrapper}>
                 <div className={styles.card}>
-                  <img src={image} alt="album" />
+                  <img src={image} alt="album" loading="lazy" />
                   <div className={styles.banner}>
                     <Chip
                       label={`${follows} Follows`}
@@ -30,7 +30,7 @@ function Card({ data, type }) {
           </Tooltip>
         );
       }
-      case "song": {
+      case "songs": {
         const { image, likes, title } = data;
         return (
           <div className={styles.wrapper}>
@@ -44,7 +44,7 @@ function Card({ data, type }) {
                 />
               </div>
             </div>
-            <div className={styles.titleWrapper}>
+            <div className={styles.titleSongs}>
               <p>{title}</p>
             </div>
           </div>

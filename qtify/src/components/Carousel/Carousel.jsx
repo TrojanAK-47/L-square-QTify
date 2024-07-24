@@ -8,6 +8,7 @@ import "swiper/css/scrollbar";
 import CarouselLeftNavigation from "./CarouselLeftNavigation/CarouselLeftNavigation";
 import CarouselRightNavigation from "./CarouselRightNavigation/CarouselRightNavigation";
 
+
 const Controls = ({ data }) => {
   const swiper = useSwiper();
   useEffect(() => {
